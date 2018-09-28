@@ -5,7 +5,7 @@
     <link name="${prefix}_engine_link">
       <visual>
         <geometry>
-          <mesh filename="package://rowbot_description/mesh/engine.dae"/>
+          <mesh filename="package://rowbot_description/mesh/engine.dae" scale="0.001 0.001 0.001"/>
         </geometry>
       </visual>
       <collision name="${prefix}_engine_vertical_axis_collision">
@@ -29,7 +29,7 @@
     <link name="${prefix}_propeller_link">
       <visual>
         <geometry>
-          <mesh filename="package://rowbot_description/mesh/propeller.dae"/>
+          <mesh filename="package://rowbot_description/mesh/propeller.dae" scale="0.001 0.001 0.001"/>
         </geometry>
       </visual>
       <collision name="${prefix}_propeller_collision">
@@ -55,8 +55,8 @@
       <parent link="${prefix}_engine_link"/>
       <child link="${prefix}_propeller_link"/>
       <origin rpy="0 0 0" xyz="-0.278156 0 -0.509371"/>
-      <limit effort="100" velocity="100" />
-      <dynamics friction="0.05" damping="0.05" />
+      <!--limit effort="100" velocity="100" />
+      <dynamics friction="0.05" damping="0.05" /-->
     </joint>
   </xacro:macro>
 </robot>

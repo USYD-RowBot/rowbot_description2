@@ -51,7 +51,6 @@
     </joint>
 
     <joint name="${prefix}_engine_propeller_joint" type="fixed">
-      <axis rpy="0 0 0" xyz="1 0 0"/>
       <parent link="${prefix}_engine_link"/>
       <child link="${prefix}_propeller_link"/>
       <origin rpy="0 0 0" xyz="-0.278156 0 -0.509371"/>

@@ -1,0 +1,9 @@
+<launch>
+     <arg name="urdf" default="$(find rowbot_description)/urdf/rowbot_wamv.xacro"/>
+     <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg urdf)"/>
+     <arg name="use_tf_static" default="false"/>
+     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" >
+         <param name="publish_frequency" type="double" value="30.0" />
+         <param name="use_tf_static" value="$(arg use_tf_static)"/>
+     </node>
+ </launch>

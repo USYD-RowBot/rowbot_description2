@@ -32,39 +32,5 @@
       <parent link="base_link" />
       <child link="${name}_link" />
     </joint>
-    <gazebo reference="${name}_link">
-      <sensor type="gpu_ray" name="${name}_sensor">
-        <update_rate>${update_rate}</update_rate>
-        <ray>
-          <scan>
-            <horizontal>
-              <samples>${samples/resolution}</samples>
-              <resolution>${resolution}</resolution>
-              <min_angle>${min_angle}</min_angle>
-              <max_angle>${max_angle}</max_angle>
-            </horizontal>
-            <vertical>
-              <samples>${vertical_lasers}</samples>
-              <resolution>1</resolution>
-              <min_angle>${min_vertical_angle}</min_angle>
-              <max_angle>${max_vertical_angle}</max_angle>
-            </vertical>
-          </scan>
-          <range>
-            <min>0.05</min>
-            <max>${max_range}</max>
-          </range>
-          <noise>
-            <type>gaussian</type>
-            <mean>0.0</mean>
-            <stddev>${noise_stddev}</stddev>
-          </noise>
-        </ray>
-        <plugin name="${name}_plugin" filename="libgazebo_ros_velodyne_gpu_laser.so">
-          <topicName>${name}/points</topicName>
-          <frameName>${name}_link</frameName>
-        </plugin>
-      </sensor>
-    </gazebo>
   </xacro:macro>
 </robot>

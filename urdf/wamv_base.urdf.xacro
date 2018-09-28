@@ -94,7 +94,7 @@
   <link name="base_link">
     <visual>
       <geometry>
-        <mesh filename="package://rowbot_description/mesh/WAM-V-Base.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://rowbot_description/mesh/WAM-V-Base.dae" s/>
       </geometry>
     </visual>
 

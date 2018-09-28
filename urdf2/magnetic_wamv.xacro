@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="magnetic_wamv" params="name">
+    <gazebo>
+      <!-- Either plugin should work -->
+      <!--<plugin name="imu_plugin_${name}" filename="libgazebo_ros_imu.so">-->
+      <plugin name="magnetic_wamv_${name}" filename="libhector_gazebo_ros_magnetic.so">
+        <updateRate>20.0</updateRate>
+        <bodyName>base_link</bodyName>
+        <topicName>rowbot/magnetic</topicName>
+
+        <frameId>base_link</frameId>
+        <alwaysOn>true</alwaysOn>
+
+      </plugin>
+    </gazebo>
+  </xacro:macro>
+</robot>

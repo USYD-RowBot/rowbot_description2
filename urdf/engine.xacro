@@ -50,7 +50,7 @@
       <child link="${prefix}_engine_link"/>
     </joint>
 
-    <joint name="${prefix}_engine_propeller_joint" type="continuous">
+    <joint name="${prefix}_engine_propeller_joint" type="fixed">
       <axis rpy="0 0 0" xyz="1 0 0"/>
       <parent link="${prefix}_engine_link"/>
       <child link="${prefix}_propeller_link"/>

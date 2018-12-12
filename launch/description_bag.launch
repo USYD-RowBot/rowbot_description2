@@ -3,12 +3,12 @@
      <arg name="urdf" default="$(find rowbot_description)/urdf/rowbot_wamv.xacro"/>
      <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg urdf)"/>
      <arg name="use_tf_static" default="false"/>
-     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" >
+     <!--node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" >
          <param name="publish_frequency" type="double" value="30.0" />
          <param name="use_tf_static" value="$(arg use_tf_static)"/>
-     </node>
+     </node-->
     <node pkg="tf" type="static_transform_publisher" name="lidar_link_broadcaster" args="0 0 0 0 0 0 1 lidar_wamv_link lidar 30" />
-    <node pkg="tf" type="static_transform_publisher" name="lidar_gps_broadcaster" args="-0.15 -0.7 0 0 0 0 1 base_link_gps base_link 30" />
- 
+    <node pkg="tf" type="static_transform_publisher" name="tf_gps_broadcaster" args="-0.15 -0.7 0 0 0 0 1 base_link_gps base_link 30" />
+
  <!--node pkg="rowbot_navigation" type="odom_to_tf.py" name="odom_to_tf"/-->
  </launch>
